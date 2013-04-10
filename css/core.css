@@ -54,7 +54,7 @@ h1, h2, h3, h4 { margin: 0px; padding: 10px 0px; font-weight: normal; }
      /* Safari and Chrome */
     -webkit-animation-name: FadeIn;
     -webkit-animation-timing-function: ease-in-out;
-    -webkit-animation-duration: 2s;
+    -webkit-animation-duration: 1s;
 
 
 
