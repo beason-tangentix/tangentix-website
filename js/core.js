@@ -1,10 +1,10 @@
 function nav_width() {
-	var nav_width = $('#test_section .inner').outerWidth();
+	var nav_width = $('#nav_section .inner').outerWidth();
 	var nav_li = (nav_width / 4) - 1
 	var nav_li_first = (nav_width / 4) - 2
 
-	$('#test_section .inner li').css({width: nav_li})
-	$('#test_section .inner li.process').css({width: nav_li_first})
+	$('#nav_section .inner li').css({width: nav_li})
+	$('#nav_section .inner li.process').css({width: nav_li_first})
 }
 
 function tester() {
@@ -39,7 +39,7 @@ $(window).load(function() {
 	var publisherPosition = $('#publisher').offset().top;
 	var faqPosition = $('#faq').offset().top;
 
-	$('#test_section').waypoint('sticky');
+	$('#nav_section').waypoint('sticky');
 	$('#process').waypoint(function() {$('li.process').toggleClass('selected')}, { offset: 50 });
 	$('#process').waypoint(function() {$('li.process').toggleClass('selected')}, {offset: function() {return -($(this).height());}});
 	$('#portfolio').waypoint(function() {$('li.portfolio').toggleClass('selected')}, { offset: 50 });
