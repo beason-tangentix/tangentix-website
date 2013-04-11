@@ -7,32 +7,69 @@ function nav_width() {
 	$('#nav_section .inner li.process').css({width: nav_li_first})
 }
 
-function tester() {
-	var blocked = $('.centered').outerHeight()
+
+function arrows_position() {
+
+	var wrapper_height = $('#wrapper').outerHeight() 
+	var nav_height = $('#nav_section').outerHeight() 
+	var wrapper_final = wrapper_height - nav_height
+	var half_wrapper = wrapper_final / 2
+	var arrows_height = $('.arrow').outerHeight()
+	var half_arrows = arrows_height / 2
+	var arrows_top = half_wrapper - half_arrows
+
+	$('.arrow').css({top: arrows_top})
 	
-	if (document.documentElement.clientHeight <= blocked) {
-		alert('no')
-	}
 }
-
-function middle() {
-	var windowHeight = $(window).outerHeight();
-	var windowWidth = $(window).outerWidth();
-
-	var halfHeight = windowHeight / 2
-	var blocker = $('.centered').outerHeight()
-	var halfBlocker = blocker / 2
-	var margin_top = halfHeight - halfBlocker - 100
-
-}
-
 
 
 $(window).load(function() {
-	tester()
 	nav_width()
+	   $("#compression_sec").hide()
 	
 	
+	$(function(){
+      $("#slides").slidesjs({
+        callback: {
+          loaded: function(number) {
+            // Use your browser console to view log
+            console.log('SlidesJS: Loaded with slide #' + number);
+
+            // Show start slide in log
+            $('#slidesjs-log .slidesjs-slide-number').text(number);
+          },
+          start: function(number) {
+            // Use your browser console to view log
+            console.log('SlidesJS: Start Animation on slide #' + number);
+          },
+          complete: function(number) {
+            // Use your browser console to view log
+            console.log('SlidesJS: Animation Complete. Current slide is #' + number);
+
+            // Change slide number on animation complete
+            $('#slidesjs-log .slidesjs-slide-number').text(number);
+            if (number === 1) {
+				$('#demoloaders_sec').removeClass('fade_out').show().addClass('active_sec fade_in')
+				$("#compression_sec").removeClass('active_sec fade_in').addClass('fade_out')
+				setTimeout(function() {
+      				$("#compression_sec").hide()
+				}, 500);
+
+            }
+            if (number === 2) {
+      			$('#compression_sec').removeClass('fade_out').show().addClass('active_sec fade_in')
+
+      			$('#demoloaders_sec').removeClass('active_sec fade_out').addClass('fade_in')
+	      		setTimeout(function() {
+	      				$("#demoloaders_sec").hide()
+					}, 500);
+      			}	
+          }
+        }
+  
+      });
+    });
+	arrows_position()
 
 	var processPosition = $('#process').offset().top;
 	var portfolioPosition = $('#portfolio').offset().top;
@@ -60,7 +97,6 @@ $(window).load(function() {
 
 $(window).resize(function() {
 	nav_width()
-	middle()
 });
 
 
