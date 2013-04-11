@@ -25,7 +25,7 @@ function arrows_position() {
 
 $(window).load(function() {
 	nav_width()
-	   $("#compression_sec").hide()
+	  
 	
 	
 	$(function(){
@@ -41,6 +41,31 @@ $(window).load(function() {
           start: function(number) {
             // Use your browser console to view log
             console.log('SlidesJS: Start Animation on slide #' + number);
+          
+           if (number === 2) {
+            	
+      				$('#compression_sec').addClass('fade_out').removeClass('active_sec fade_in')
+
+      		
+
+	      		setTimeout(function() {
+	      				$("#compression_sec").addClass('inactive_sec').removeClass('fade_out')
+	      				$('#demoloaders_sec').removeClass('inactive_sec').addClass('active_sec fade_in')
+					}, 500);
+      			}
+
+      			 if (number === 1) {
+            	
+            	$('#demoloaders_sec').addClass('fade_out').removeClass('active_sec fade_in')
+
+      			
+				
+				setTimeout(function() {
+      				$("#demoloaders_sec").addClass('inactive_sec').removeClass('fade_out')
+      				$('#compression_sec').removeClass('inactive_sec').addClass('active_sec fade_in')
+				}, 500);
+
+            }	
           },
           complete: function(number) {
             // Use your browser console to view log
@@ -48,22 +73,7 @@ $(window).load(function() {
 
             // Change slide number on animation complete
             $('#slidesjs-log .slidesjs-slide-number').text(number);
-            if (number === 1) {
-				$('#demoloaders_sec').removeClass('fade_out').show().addClass('active_sec fade_in')
-				$("#compression_sec").removeClass('active_sec fade_in').addClass('fade_out')
-				setTimeout(function() {
-      				$("#compression_sec").hide()
-				}, 500);
-
-            }
-            if (number === 2) {
-      			$('#compression_sec').removeClass('fade_out').show().addClass('active_sec fade_in')
-
-      			$('#demoloaders_sec').removeClass('active_sec fade_out').addClass('fade_in')
-	      		setTimeout(function() {
-	      				$("#demoloaders_sec").hide()
-					}, 500);
-      			}	
+            
           }
         }
   
