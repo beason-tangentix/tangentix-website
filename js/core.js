@@ -1,10 +1,10 @@
 function nav_width() {
 	var nav_width = $('#nav_section .inner').outerWidth();
-	var nav_li = (nav_width / 4) - 1
-	var nav_li_first = (nav_width / 4) - 2
+	var nav_li = (nav_width / 4) - 2
+	var nav_li_first = (nav_width / 4) 
 
 	$('#nav_section .inner li').css({width: nav_li})
-	$('#nav_section .inner li.process').css({width: nav_li_first})
+	$('#nav_section .inner li.publisher').css({width: nav_li_first})
 }
 
 
