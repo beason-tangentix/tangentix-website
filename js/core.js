@@ -73,6 +73,12 @@ $(window).load(function() {
 
             // Change slide number on animation complete
             $('#slidesjs-log .slidesjs-slide-number').text(number);
+
+            processPosition = $('#process').offset().top;
+	portfolioPosition = $('#portfolio').offset().top;
+	publisherPosition = $('#publisher').offset().top;
+	faqPosition = $('#faq').offset().top;
+
             
           }
         }
