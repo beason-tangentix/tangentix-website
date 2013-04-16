@@ -1,10 +1,15 @@
 function nav_width() {
 	var nav_width = $('#nav_section .inner').outerWidth();
+<<<<<<< HEAD
 	var nav_li = (nav_width / 4) - 1
 	var nav_li_first = (nav_width / 4) - 3
+=======
+	var nav_li = (nav_width / 4) - 2
+	var nav_li_first = (nav_width / 4) 
+>>>>>>> dev-slider
 
 	$('#nav_section .inner li').css({width: nav_li})
-	$('#nav_section .inner li.process').css({width: nav_li_first})
+	$('#nav_section .inner li.publisher').css({width: nav_li_first})
 }
 
 
@@ -73,6 +78,12 @@ $(window).load(function() {
 
             // Change slide number on animation complete
             $('#slidesjs-log .slidesjs-slide-number').text(number);
+
+            processPosition = $('#process').offset().top;
+	portfolioPosition = $('#portfolio').offset().top;
+	publisherPosition = $('#publisher').offset().top;
+	faqPosition = $('#faq').offset().top;
+
             
           }
         }

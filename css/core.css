@@ -141,7 +141,7 @@ table .last { border: none;}
 .switcher ul.selector li.selected {  background: rgba(0,0,0,0.1); box-shadow: inset 0px 2px 10px rgba(0,0,0,0.15);}
 .switcher ul.selector li.inactive:hover { background: rgba(255,255,255,0.05);}*/
 
-.left_head, .right_head { width:389px; float: left; padding: 10px 30px 50px; margin: 40px 0px 80px; text-align: center;}
+.left_head, .right_head { width:388px; float: left; padding: 10px 30px 50px; margin: 40px 0px 80px; text-align: center;}
 .right_head { border-left: 1px solid rgba(255,255,255,0.25);}
 .left_head { border-right:  1px solid rgba(0,0,0,0.15);}
 .little { display: none;}
